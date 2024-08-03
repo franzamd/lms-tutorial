@@ -39,19 +39,20 @@ const CreatePage = () => {
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
-      const response = await axios.post('/api/course', values);
+      const response = await axios.post('/api/courses', values);
       router.push(`/teacher/courses/${response.data.id}`);
+      toast.success('Course created');
     } catch {
       toast.error('Something went wrong');
     }
   };
 
   return (
-    <div className='max-w-5xl mx-auto flex md:items-center md:justify-center h-full p-6'>
+    <div className='max-w-5xl max-auto flex md:items-center md:justify-center h-full p-6'>
       <div>
         <h1 className='text-2xl'>Name your course</h1>
         <p className='text-sm text-slate-600'>
-          What would you like to name your course? Don&apos;t worry, you can
+          What would you like to name your course? Don&apos;t worry you can
           change this later.
         </p>
         <Form {...form}>
@@ -64,11 +65,11 @@ const CreatePage = () => {
               name='title'
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Course title</FormLabel>
+                  <FormLabel>Course Title</FormLabel>
                   <FormControl>
                     <Input
                       disabled={isSubmitting}
-                      placeholder="e.g. 'Advanced web development'"
+                      placeholder="e.g. 'Advanced Web Development'"
                       {...field}
                     />
                   </FormControl>
@@ -84,10 +85,10 @@ const CreatePage = () => {
                 <Button type='button' variant='ghost'>
                   Cancel
                 </Button>
-                <Button type='submit' disabled={!isValid || isSubmitting}>
-                  Continue
-                </Button>
               </Link>
+              <Button type='submit' disabled={!isValid || isSubmitting}>
+                Continue
+              </Button>
             </div>
           </form>
         </Form>
