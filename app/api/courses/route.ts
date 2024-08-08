@@ -4,7 +4,6 @@ import { NextResponse } from 'next/server';
 import { db } from '@/lib/db';
 
 export async function POST(req: Request) {
-  console.log('entro');
   try {
     const { userId } = auth();
     const { title } = await req.json();
