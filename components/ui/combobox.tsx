@@ -42,7 +42,7 @@ export const Combobox = ({ options, value, onChange }: ComboboxProps) => {
           <ChevronsUpDown className='ml-2 h-4 w-4 shrink-0 opacity-50' />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className='w-[full p-0'>
+      <PopoverContent className='w-full p-0'>
         <Command>
           <CommandInput placeholder='Search option...' />
           <CommandEmpty>No option found.</CommandEmpty>
