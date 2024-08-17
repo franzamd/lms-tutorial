@@ -3,7 +3,7 @@ import { Chapter, Course, UserProgress } from '@prisma/client';
 
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 
-import { CourseSidebar } from './course_sidebar';
+import { CourseSidebar } from './course-sidebar';
 
 interface CourseMobileSidebarProps {
   course: Course & {
